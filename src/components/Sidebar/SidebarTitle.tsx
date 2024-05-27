@@ -4,7 +4,7 @@ import { theme } from "../../variables/theme";
 export const SidebarTitle = () => {
   return (
     <Typography style={{ color: theme.redColor, fontWeight: "bold" }}>
-      Multicarnes Santa Lucia
+      Productos prueba
     </Typography>
   );
 };

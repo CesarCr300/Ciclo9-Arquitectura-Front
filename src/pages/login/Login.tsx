@@ -1,12 +1,16 @@
+import { useState } from "react";
 import { Box } from "@mui/material";
 
+import { Loading } from "../../components/Loading";
+import { useIsAuthenticated } from "../../hooks/useIsAuthenticated";
 import { LoginForm } from "./components/LoginForm";
 import { LoginContext } from "./context/login.context";
-import { useState } from "react";
-import { Loading } from "../../components/Loading";
 
 export const Login = () => {
   const [loading, setLoading] = useState(false);
+
+  useIsAuthenticated();
+
   return (
     <LoginContext.Provider value={{ loading, setLoading }}>
       {loading && <Loading />}

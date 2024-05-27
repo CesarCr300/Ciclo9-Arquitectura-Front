@@ -1,9 +1,8 @@
 import { AxiosCall } from "../entities/axios-call.entity";
 import { AxiosResponse } from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const useFetchAndLoad = (setLoading: (value: boolean) => void) => {
-  // const [loading, setLoading] = useState(false);
   let controller: AbortController;
 
   const callEndpoint = async <T>(axiosCall: AxiosCall<T>) => {
@@ -16,6 +15,7 @@ const useFetchAndLoad = (setLoading: (value: boolean) => void) => {
       setLoading(false);
       throw err;
     }
+
     setLoading(false);
     return result;
   };

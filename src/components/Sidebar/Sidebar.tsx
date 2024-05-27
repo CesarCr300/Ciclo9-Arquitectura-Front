@@ -88,7 +88,6 @@ export function Sidebar() {
         sx={{
           width: { sm: drawerWidth },
           flexShrink: { sm: 0 },
-          // filter: "drop-shadow(0px 6px 4px #000)",
         }}
         aria-label="mailbox folders"
       >
@@ -98,7 +97,7 @@ export function Sidebar() {
           onTransitionEnd={handleDrawerTransitionEnd}
           onClose={handleDrawerClose}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },

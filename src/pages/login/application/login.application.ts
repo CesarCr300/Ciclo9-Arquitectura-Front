@@ -8,6 +8,7 @@ import { AxiosCall } from "../../../entities/axios-call.entity";
 import { AxiosResponse } from "axios";
 import { createLoginResponseToUserAdapter } from "../adapters/create-login-response-to-user.adapter";
 import { LoginResponse } from "../entities/login-response.entity";
+import { defaultAuthenticatedUserRoute } from "../../../variables/routes.variables";
 
 export const login = async (
   email: string,
@@ -23,5 +24,5 @@ export const login = async (
     loginService(createLoginAdapter(email, password))
   );
   dispatch(loginReducer(createLoginResponseToUserAdapter(response.data)));
-  navigate("/products");
+  navigate(defaultAuthenticatedUserRoute);
 };

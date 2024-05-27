@@ -5,14 +5,14 @@ export const SidebarLinks = () => {
   return (
     <div>
       <List>
-        <ListItemButton sx={{ padding: 0 }} key="Inbox">
-          <ListItemText>
-            <CustomeLink to="/customers" text="Clientes" />
-          </ListItemText>
-        </ListItemButton>
-        <ListItemButton sx={{ padding: 0 }} key="Starred">
+        <ListItemButton sx={{ padding: 0 }}>
           <ListItemText>
             <CustomeLink to="/products" text="Productos" />
+          </ListItemText>
+        </ListItemButton>
+        <ListItemButton sx={{ padding: 0 }}>
+          <ListItemText>
+            <CustomeLink to="/users/update" text="Actualizar usuario" />
           </ListItemText>
         </ListItemButton>
       </List>
