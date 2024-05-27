@@ -1,5 +1,5 @@
 import { abortController } from "../utils/abort-controller.util";
-import { axiosInstance } from "./api.service";
+import { AxiosInstanceSingletone } from "./api.service";
 
 export class BaseRestService<
   TFindOneResponse,
@@ -7,7 +7,7 @@ export class BaseRestService<
   TCreateBody,
   TUpdateBody
 > {
-  protected readonly _axiosInstance = axiosInstance;
+  protected readonly _axiosInstance = AxiosInstanceSingletone.getInstance();
   protected readonly resourceUrl: string;
   constructor(resourceUrl: string) {
     if (resourceUrl.endsWith("/")) {
@@ -50,9 +50,13 @@ export class BaseRestService<
   update(id: number, body: TUpdateBody) {
     const controller = abortController();
     return {
-      call: this._axiosInstance.patch<TUpdateBody>(this.resourceUrl + id, body, {
-        signal: controller.signal,
-      }),
+      call: this._axiosInstance.patch<TUpdateBody>(
+        this.resourceUrl + id,
+        body,
+        {
+          signal: controller.signal,
+        }
+      ),
       controller,
     };
   }

@@ -10,6 +10,7 @@ import { LoginEntity } from "../entities/login.entity";
 import { login } from "../application/login.application";
 import { useContext } from "react";
 import { LoginContext } from "../context/login.context";
+import { CustomeLink } from "../../../components/CustomeLink";
 
 export const LoginForm = () => {
   const { setLoading } = useContext(LoginContext);
@@ -32,7 +33,7 @@ export const LoginForm = () => {
     <Box
       display="flex"
       flexDirection="column"
-      minWidth="350px"
+      minWidth="300px"
       sx={{
         borderRadius: "8px",
         padding: "40px 20px",
@@ -48,7 +49,7 @@ export const LoginForm = () => {
           <FormControl>
             <TextField
               id="email"
-              label="Correo electrónico"
+              label="Correo electrónico o usuario"
               {...register("email")}
               size="small"
             />
@@ -63,6 +64,17 @@ export const LoginForm = () => {
             />
           </FormControl>
           <Button text="Ingresar" type="submit" />
+        </Box>
+        <Box display="flex" justifyContent="center" mt="20px">
+          <CustomeLink
+            to="/users/forgot-password"
+            text="¿Olvidaste tu contraseña?"
+            style={{
+              color: "#1976D2",
+              textDecoration: "none",
+              fontWeight: "bold",
+            }}
+          />
         </Box>
       </form>
     </Box>

@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { UserEntity } from "../entities/user.entity";
+import { AxiosInstanceSingletone } from "../services/api.service";
 
 interface UserState {
   isAuthenticated: boolean;
@@ -7,7 +8,7 @@ interface UserState {
 }
 
 const initialState: UserState = {
-  isAuthenticated: false,
+  isAuthenticated: window.localStorage.getItem("user") != null,
   user: window.localStorage.getItem("user")
     ? JSON.parse(window.localStorage.getItem("user")!)
     : null,
@@ -18,6 +19,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     login(state, action: PayloadAction<UserEntity>) {
+      AxiosInstanceSingletone.setNewToken(action.payload.token);
       window.localStorage.setItem("user", JSON.stringify(action.payload));
       state.isAuthenticated = true;
       state.user = action.payload;
