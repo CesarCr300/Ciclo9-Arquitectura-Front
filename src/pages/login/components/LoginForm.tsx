@@ -1,4 +1,4 @@
-import { Box, FormControl, TextField, Typography } from "@mui/material";
+import { Box, FormControl, TextField, Typography, ThemeProvider, createTheme, colors } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -11,6 +11,26 @@ import { login } from "../application/login.application";
 import { useContext } from "react";
 import { LoginContext } from "../context/login.context";
 import { CustomeLink } from "../../../components/CustomeLink";
+
+const theme = createTheme({
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        contained: {
+          backgroundColor: '#C22B2B', // Color de fondo por defecto
+          '&:hover': {
+            backgroundColor: '#a12222', // Color de fondo al pasar el mouse
+          },
+        },
+      },
+    },
+  },
+  palette: {
+    primary: {
+      main: '#C22B2B',
+    },
+  },
+});
 
 export const LoginForm = () => {
   const { setLoading } = useContext(LoginContext);
@@ -30,6 +50,7 @@ export const LoginForm = () => {
     );
   };
   return (
+    <ThemeProvider theme={theme}>
     <Box
       display="flex"
       flexDirection="column"
@@ -45,6 +66,9 @@ export const LoginForm = () => {
         <Typography component="h1" variant="h4" textAlign={"center"}>
           Inicio de sesión
         </Typography>
+        <Typography   component="h2" textAlign={"center"}>
+          Introduce los datos de tu cuenta
+        </Typography> 
         <Box display="flex" flexDirection="column" gap="30px" mt="40px">
           <FormControl>
             <TextField
@@ -70,7 +94,7 @@ export const LoginForm = () => {
             to="/users/forgot-password"
             text="¿Olvidaste tu contraseña?"
             style={{
-              color: "#1976D2",
+              color: "#C22B2B",
               textDecoration: "none",
               fontWeight: "bold",
             }}
@@ -78,5 +102,6 @@ export const LoginForm = () => {
         </Box>
       </form>
     </Box>
+    </ThemeProvider>
   );
 };
