@@ -10,6 +10,8 @@ import { UserUpdate } from "../pages/userUpdate/UserUpdate";
 import { UserRecoverPassword } from "../pages/userRecoverPassword/UserRecoverPassword";
 import { UserForgotPassword } from "../pages/userForgotPassword/UserForgotPassword";
 import { ProductUser } from "../pages/productsUser/ProductUser";
+import { Store } from "../pages/store/store";
+import LayoutPublic from "../components/LayoutPublic";
 
 export const router = createBrowserRouter([
   {
@@ -19,25 +21,36 @@ export const router = createBrowserRouter([
   { path: "/users/forgot-password", element: <UserForgotPassword /> },
   { path: "/users/recover-password", element: <UserRecoverPassword /> },
   {
-    path: "/",
+    path: "/admin",
     element: <Layout />,
     children: [
       {
-        path: "/products",
+        path: "products",
         element: <Products />,
       },
       {
-        path: "/products/create",
+        path: "products/create",
         element: <ProductsCreation />,
       },
       {
-        path: "/products/:id",
+        path: "products/:id",
         element: <ProductsCard />,
       },
-      { path: "/users/update", element: <UserUpdate /> },
+      { path: "users/update", element: <UserUpdate /> },
     ],
   },
   {
-    path: "/productsUser/:id", 
-    element:<ProductUser/>},    
+    path: "/",
+    element: <LayoutPublic />,
+    children: [
+      {
+        path: "/productsUser/:id",
+        element: <ProductUser />,
+      },
+      {
+        path: "/store",
+        element: <Store />,
+      },
+    ],
+  },
 ]);
