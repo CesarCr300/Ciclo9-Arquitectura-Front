@@ -1,0 +1,46 @@
+footer {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: flex-start;
+    justify-content: space-around; ;
+}
+
+#div_contact {
+    margin-bottom: 20px;
+}
+
+#div_contact a {
+    text-decoration: none;
+}
+
+#div_information {
+    margin-bottom: 20px;
+}
+
+#div_information  a {
+    text-decoration: none;
+    display: block;
+}
+
+#div_presentations a {
+    text-decoration: none; 
+    display: block;
+}
+
+#div_reserved {
+    margin-top: 20px;
+}
+
+#div_images img {
+    width: 25px;
+    height: 25px;
+}
+
+#div_reserved{
+    text-align: center;
+}
+
+/*block; margin-bottom: 5px;*/

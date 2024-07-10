@@ -9,6 +9,7 @@ import { ProductsCreation } from "../pages/productsCreation/ProductsCreation";
 import { UserUpdate } from "../pages/userUpdate/UserUpdate";
 import { UserRecoverPassword } from "../pages/userRecoverPassword/UserRecoverPassword";
 import { UserForgotPassword } from "../pages/userForgotPassword/UserForgotPassword";
+import { ProductUser } from "../pages/productsUser/ProductUser";
 
 export const router = createBrowserRouter([
   {
@@ -36,4 +37,7 @@ export const router = createBrowserRouter([
       { path: "/users/update", element: <UserUpdate /> },
     ],
   },
+  {
+    path: "/productsUser/:id", 
+    element:<ProductUser/>},    
 ]);
