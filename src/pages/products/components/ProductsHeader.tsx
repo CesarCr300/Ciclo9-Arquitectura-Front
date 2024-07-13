@@ -18,7 +18,7 @@ export const ProductsHeader = () => {
       <div>
         <Button
           handleClick={() => {
-            navigate("/products/create");
+            navigate("/admin/products/create");
           }}
           text="Crear"
         />

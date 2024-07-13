@@ -7,12 +7,12 @@ export const SidebarLinks = () => {
       <List>
         <ListItemButton sx={{ padding: 0 }}>
           <ListItemText>
-            <CustomeLink to="/products" text="Productos" />
+            <CustomeLink to="/admin/products" text="Productos" />
           </ListItemText>
         </ListItemButton>
         <ListItemButton sx={{ padding: 0 }}>
           <ListItemText>
-            <CustomeLink to="/users/update" text="Actualizar usuario" />
+            <CustomeLink to="/admin/users/update" text="Actualizar usuario" />
           </ListItemText>
         </ListItemButton>
       </List>

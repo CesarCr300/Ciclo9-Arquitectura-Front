@@ -10,7 +10,7 @@ export  const ProductUserHeader = () => {
                         <a href="mailto:santalucia@gmail.com">📧 santalucia@gmail.com</a>
                 </div>
                 <div>
-                    <a  id="div_header_containt_follow" href="#">Síguenos, para enterarte de las nuevas ofertas!</a>
+                    <a  id="div_header_containt_follow" href="#">AAAAAAA, para enterarte de las nuevas ofertas!</a>
                 </div>
                 <div>
                     <a href="#" >Mi carrito</a>
@@ -24,8 +24,8 @@ export  const ProductUserHeader = () => {
             <div id="div_nav">
                 <a href="#" id="div_nav_a_tittle">Carnicería Multicarnes S.L.</a>
                 <div id="div_nav_routes">
-                    <a href="/productsUser/1" id = "div_nav_routes_menu">Menú</a>
-                    <a href="/productsUser/1" id = "div_nav_routes_store">Tienda</a>
+                    <a href="/productsUser/1" id = "div_nav_routes_menu">Inicio</a>
+                    <a href="/store" id = "div_nav_routes_store">Menú</a>
                     <a href="/productsUser/1" id = "div_nav_routes_us">Nosotros</a>
                     <a href="/productsUser/1" id = "div_nav_routes_contact">Contacto</a>
                 </div>

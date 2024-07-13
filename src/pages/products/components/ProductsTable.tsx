@@ -20,7 +20,7 @@ export const ProductsTable = () => {
     <Table
       columns={useMemo(() => getColumns(), [])}
       rows={rows}
-      watchCardRoute={"/products/"}
+      watchCardRoute={"/admin/products/"}
       remove={removeById}
       removeParams={{ callEndpoint, setRows }}
       searchBar={{ rows: rows, setRows, paramToSearch: "name" }}
