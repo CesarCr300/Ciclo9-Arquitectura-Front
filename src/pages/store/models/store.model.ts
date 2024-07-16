@@ -4,4 +4,5 @@ export interface StoreModel {
     price: number;
     stock: number;
     description: string;
+    imageUrl:string;
 }

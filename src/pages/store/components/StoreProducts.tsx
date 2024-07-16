@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Inner } from "./inner.tsx";
 import { StoreModel } from "../models/store.model.ts";
 
@@ -7,14 +7,17 @@ export const StoreProducts = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/products") 
+    fetch("http://localhost:3000/products")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.data); 
-        if (Array.isArray(data.data)) { // Accede a data.data
+        console.log(data.data);
+        if (Array.isArray(data.data)) {
+          // Accede a data.data
           setProducts(data.data);
         } else {
-          console.error('La respuesta del backend no contiene un array en data');
+          console.error(
+            "La respuesta del backend no contiene un array en data"
+          );
         }
         setLoading(false);
       })
@@ -27,14 +30,17 @@ export const StoreProducts = () => {
     return <p>Cargando productos...</p>;
   }
   return (
-    <div id="content">
-       {Array.isArray(products) && products.length > 0 ? (
-        products.map((product) => (
-          <Inner key={product.id} product={product} />
-        ))
-      ) : (
-        <p>No se encontraron productos.</p>
-      )}
+    <div id="div_content_products">
+      <h1 id="tittle_product">Productos</h1>
+      <div className="product-container">
+        {Array.isArray(products) && products.length > 0 ? (
+          products.map((product) => (
+            <Inner key={product.id} product={product} />
+          ))
+        ) : (
+          <p>No se encontraron productos.</p>
+        )}
+      </div>
     </div>
   );
 };

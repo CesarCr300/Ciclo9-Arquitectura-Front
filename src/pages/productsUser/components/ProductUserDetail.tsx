@@ -20,7 +20,7 @@ export  const ProductUserDetail = () => {
             {product ? (
                 <div id="product-container">
                 <div id="product-image">
-                    <img src="/public/img/pollo.jpg" alt={product.name} />
+                    <img src={product.imageUrl} alt={product.name} />
                 </div>
                 <div id="product-details">
                     <div id="product-name">{product.name ?? ""}</div>

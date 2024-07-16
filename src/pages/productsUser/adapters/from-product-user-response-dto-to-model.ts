@@ -10,5 +10,6 @@ export const fromProductUserResponseDtoToModel = (
         price: dto.price,
         stock: dto.stock,
         description: dto.description,
+        imageUrl: dto.imageUrl,
     }
 }

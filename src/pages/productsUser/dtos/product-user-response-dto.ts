@@ -4,4 +4,5 @@ export interface ProductUserResponseDto {
     price: number;
     stock: number;
     description: string;
+    imageUrl: string;
 }

@@ -10,9 +10,9 @@ import { UserUpdate } from "../pages/userUpdate/UserUpdate";
 import { UserRecoverPassword } from "../pages/userRecoverPassword/UserRecoverPassword";
 import { UserForgotPassword } from "../pages/userForgotPassword/UserForgotPassword";
 import { ProductUser } from "../pages/productsUser/ProductUser";
-import { Store } from "../pages/store/store";
 import LayoutPublic from "../components/LayoutPublic";
 import { StoreProducts } from "../pages/store/components/StoreProducts";
+import { Home } from "@mui/icons-material";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +51,10 @@ export const router = createBrowserRouter([
       {
         path: "/store",
         element: <StoreProducts />,
+      },
+      {
+        path: "/inicio",
+        element: <Home />,
       },
     ],
   },
