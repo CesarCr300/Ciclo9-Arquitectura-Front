@@ -1,8 +1,8 @@
 import { BaseRestService } from "../../../services/base.service";
-import { StoreCreateDto } from "../dto/store-create-dto";
-import { StoreResponseDto } from "../dto/store-response-dto";
-import { StoreResponseManyDto } from "../dto/store-response-many-dto";
-import { StoreUpdateDto } from "../dto/store-update-dto";
+import { StoreCreateDto } from "../dtos/store-create-dto";
+import { StoreResponseDto } from "../dtos/store-response-dto";
+import { StoreResponseManyDto } from "../dtos/store-response-many-dto";
+import { StoreUpdateDto } from "../dtos/store-update-dto";
 
 class StoreSerivce extends BaseRestService<
   StoreCreateDto,
